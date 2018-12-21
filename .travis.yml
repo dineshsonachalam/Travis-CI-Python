@@ -1,11 +1,16 @@
-language: python
-services: docker
+sudo: required
+services:
+- docker
+
+
 before_install:
-- docker build -t hello_world:1.0.2 .
-- docker run hello_world:1.0.2 
-- docker ps -a
-- docker login -u="dineshsonachalam1996" -p="$DOCKER_HUB_PSWD" 
-- docker tag hello_world:1.0.2 dineshsonachalam1996/hello_world:1.0.2
-- docker push dineshsonachalam1996/hello_world:1.0.2
-script: 
-  - python main.py
+- docker build -t hello_world:1.0.0 .
+
+script:
+- docker run hello_world:1.0.0
+
+after_success:
+  #log in to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  #take built images and push to DOcker hub
+  - docker push dineshsonachalam/hello_world:1.0.0
