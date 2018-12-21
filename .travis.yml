@@ -4,8 +4,7 @@ before_install:
 - docker build -t hello_world:1.0.2 .
 - docker run hello_world:1.0.2 
 - docker ps -a
-- echo ${DOCKER_HUB_PSWD}
-- sudo docker login -u="dineshsonachalam1996" -p="$DOCKER_HUB_PSWD"
+- echo "$DOCKER_HUB_PSWD" | docker login -u "dineshsonachalam1996" --password-stdin
 - sudo docker tag hello_world:1.0.2 dineshsonachalam1996/hello_world:1.0.2
 - sudo docker push dineshsonachalam1996/hello_world:1.0.2
 script: 
