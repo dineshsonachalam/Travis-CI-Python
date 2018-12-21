@@ -4,10 +4,10 @@ services:
 
 
 before_install:
-- docker build -t hello_world:1.0.0 .
+- docker build -t dineshsonachalam/hello_world:1.0.0 .
 
 script:
-- docker run hello_world:1.0.0
+- docker run dineshsonachalam/hello_world:1.0.0
 
 after_success:
   #log in to docker CLI
