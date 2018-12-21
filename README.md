@@ -1,6 +1,7 @@
 # Travis-CI-Python
 
-![](https://api.travis-ci.org/dineshsonachalam/Travis-CI-Python.svg?branch=master)
+[![Build Status](https://api.travis-ci.org/dineshsonachalam/Travis-CI-Python.svg?branch=master)](https://travis-ci.org/dineshsonachalam/Travis-CI-Python)
+
 
 Continous Integration is the practice of merging small code frequently and testing it.
 The goal is to develop and test in small increments.
